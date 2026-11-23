@@ -2,4 +2,14 @@
 title: "Movie Analysis"
 author: "Angel Emilio Frias Arias"
 format: html
+execute:
+  echo: false
 ---
+
+```{r}
+#| message: false
+library(tidyverse)
+
+movies <- read_csv("data/movies.csv")
+print(movies)
+```
