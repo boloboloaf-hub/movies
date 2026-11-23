@@ -11,5 +11,20 @@ execute:
 library(tidyverse)
 
 movies <- read_csv("data/movies.csv")
-print(movies)
+```
+
+```{r}
+#| cache: true
+movies_clean <- separate_longer_delim(movies, genre, delim = ",\\s*")
+```
+
+```{r}
+ggplot(movies, aes(x = tomatoMeter)) +
+  geom_histogram() +
+  labs(
+    title = "Distribution of Tomatometer Scores",
+    subtitle = "29,783 films",
+    x = "Tomatometer Score",
+    y = "Count"
+  )
 ```
